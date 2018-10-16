@@ -1,4 +1,15 @@
 # coding = utf-8
+'''
+    参考网址：https://github.com/maoqyhz/TextCharactervVisualization
+'''
+from __future__ import print_function
+
+"""
+Created on 2018/10/15 12:24
+
+@file: relationship_view.py
+@author: Kaimo Yang
+"""
 import networkx as nx 
 import matplotlib.pyplot as plt
 import csv
@@ -6,10 +17,12 @@ import csv
 
 edge = []
 
+inputdir = "output/"
+
 import pandas as pd 
-edgeDataframe = pd.read_csv("edge.csv",encoding="utf-8")
+edgeDataframe = pd.read_csv(inputdir + "edge.csv",encoding="utf-8")
 print(edgeDataframe)
-for i in range(1,len(edgeDataframe)):
+for i in range(0,len(edgeDataframe)):
 	line = tuple([edgeDataframe['Source'][i],edgeDataframe['Target'][i]])
 	#print(f"line:{line}")
 	edge.append(line)
@@ -22,9 +35,6 @@ G.add_edges_from(edge)
 
 colors = ["red","green","blue","yellow"]
 
-
-#nx.draw(G,with_labels=True,pos=nx.random_layout(G),font_size=12,node_size=2000,node_color=colors) #alpha=0.3
-#pos=nx.spring_layout(G,iterations=50)
 pos=nx.random_layout(G)
 nx.draw_networkx_nodes(G, pos, alpha=0.2,node_size=1200,node_color=colors)
 nx.draw_networkx_edges(G, pos, node_color='r', alpha=0.3) #style='dashed'

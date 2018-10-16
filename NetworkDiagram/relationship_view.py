@@ -1,24 +1,26 @@
 # -*- coding: utf-8 -*-
 '''
-    网址：https://github.com/maoqyhz/TextCharactervVisualization
+    参考网址：https://github.com/maoqyhz/TextCharactervVisualization
 '''
 from __future__ import print_function
 
 """
-Created on 2017/10/15 19:24
+Created on 2018/10/15 12:24
 
 @file: relationship_view.py
-@author: Qingyu Mao
+@author: Kaimo Yang
 """
 import jieba
 import codecs
 from collections import defaultdict
 
-TEXT_PATH = 'jsjs.txt'  # 文本路径
-DICT_PATH = 'person.txt'  # 人物字典路径
-SYNONYMOUS_DICT_PATH = 'synonymous_dict.txt'  # 同义词路径
-SAVE_NODE_PATH = 'node.csv'
-SAVE_EDGE_PATH = 'edge.csv'
+inputdir = "input/"
+outputdir = "output/"
+TEXT_PATH = inputdir+'jsjs.txt'  # 文本路径
+DICT_PATH = inputdir+'person.txt'  # 人物字典路径
+SYNONYMOUS_DICT_PATH = inputdir+'synonymous_dict.txt'  # 同义词路径
+SAVE_NODE_PATH = outputdir+'node.csv'
+SAVE_EDGE_PATH = outputdir+'edge.csv'
 
 
 class RelationshipView:
