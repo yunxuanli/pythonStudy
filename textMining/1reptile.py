@@ -62,7 +62,7 @@ while not status:
 		news = bsObj.findAll("div",{"class":"left_zw"})[0].get_text()
 		print(f"news{news}")
 
-		fnews = open('news.txt', 'w', encoding="utf-8")
+		fnews = open('data/news.txt', 'w', encoding="utf-8")
 
 		fnews.write(news)
 		status = True

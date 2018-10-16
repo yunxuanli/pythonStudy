@@ -7,12 +7,12 @@
 import jieba
 from os import path
 
-jieba.load_userdict("userdict.txt")		# 用户自定义词典
+jieba.load_userdict("data/userdict.txt")		# 用户自定义词典
 
 d = ""
-stopwords_path = "stop_words.txt" 		# 停用词词表
+stopwords_path = "data/stop_words.txt" 		# 停用词词表
 
-text_path = 'news.txt' 					#设置要分析的文本路径
+text_path = 'data/news.txt' 					#设置要分析的文本路径
 text = open(path.join(d, text_path),'r', encoding='UTF-8').read()
 
 # 功能：停用词词典加载
@@ -75,7 +75,7 @@ def jiebaclearPosText(text):
 	    if not(word.strip() in f_stop_seg_list) and len(word.strip())>1:
 	        mywordlist.append(word+"/"+flag+"\n")
 
-	with open('word_posseg.txt', 'w',encoding = "utf-8") as f_word_posseg:
+	with open('output/word_posseg.txt', 'w',encoding = "utf-8") as f_word_posseg:
 		f_word_posseg.write(''.join(mywordlist))
 
 	return ''.join(mywordlist)
